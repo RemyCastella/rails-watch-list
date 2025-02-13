@@ -1,7 +1,7 @@
-<div class="container">
-  <%= link_to "All lists", lists_path %>
-  <%= link_to "Add movie", new_list_bookmark_path(@list) %>
-  <h1><%= @list.name %> Movies</h1>
+<div class="mt-4 container">
+  <%= link_to "All lists", lists_path, class: "btn btn-primary"%>
+  <%= link_to "Add movie", new_list_bookmark_path(@list), class: "btn btn-primary" %>
+  <h1 class="mt-4"><%= @list.name %> Movies</h1>
   <div class="cards">
     <% @list.movies.each do |movie| %>
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= movie.poster_url %>)">

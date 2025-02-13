@@ -1,9 +1,18 @@
+<% random_movie = @movies.sample %>
+
+<div class="banner d-flex align-items-center" style="background-image: linear-gradient(rgba(2, 6, 23, 0.2),rgba(2, 6, 23, 0.8)), url(<%= random_movie.poster_url %>);">
+  <div class="container banner-text">
+    <h1>Watch the greatest movies</h1>
+    <p>Featured: <%= random_movie.title %></p>
+  </div>
+</div>
+
 <div class="container">
-  <%= link_to "Add a list!", new_list_path %>
-  <div class="cards">
+  <%= link_to "+ Add a list!", new_list_path, class: "mt-4 btn btn-primary rounded rounded-lg"%>
+  <div class="cards mt-4">
   <% if @lists.any? %>
     <% @lists.each do |list| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.movies.any? ? list.movies.sample.poster_url : 'https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg' %>)">
         <h2><%= list.name %></h2>
         <%= link_to "", list_path(list) %>
       </div>

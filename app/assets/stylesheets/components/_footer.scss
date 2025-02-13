@@ -1,0 +1,11 @@
+$slate: #0f172a;
+
+.footer {
+  background: $slate;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  padding: 0px 50px;
+  color: rgba(255, 255, 255, 0.3);
+}

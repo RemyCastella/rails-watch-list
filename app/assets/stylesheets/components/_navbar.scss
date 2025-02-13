@@ -1,3 +1,6 @@
+$slate: #0f172a;
+$slate-100: #f1f5f9;
+
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
@@ -9,4 +12,18 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar {
+  background-color: $slate;
+
+  .logo {
+    width: 6rem;
+  }
+
+}
+
+a {
+  color: $slate-100;
+  text-decoration: none;
 }
