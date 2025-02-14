@@ -1,6 +1,6 @@
 <% random_movie = @movies.sample %>
 
-<div class="banner d-flex align-items-center" style="background-image: linear-gradient(rgba(2, 6, 23, 0.2),rgba(2, 6, 23, 0.8)), url(<%= random_movie.poster_url %>);">
+<div class="banner d-flex align-items-center" style="background-image: linear-gradient(rgba(2, 6, 23, 0),rgba(2, 6, 23, 0.8)), url(<%= random_movie.poster_url %>);">
   <div class="container banner-text">
     <h1>Watch the greatest movies</h1>
     <p>Featured: <%= random_movie.title %></p>
