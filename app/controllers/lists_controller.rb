@@ -22,9 +22,16 @@ class ListsController < ApplicationController
   end
 
   def edit
+    @list = List.find(params[:id])
   end
 
   def update
+    @list = List.new(list_params)
+    if @list.save
+      redirect_to lists_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   private
