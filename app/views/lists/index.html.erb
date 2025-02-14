@@ -12,10 +12,17 @@
   <div class="cards mt-4">
   <% if @lists.any? %>
     <% @lists.each do |list| %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? (cl_image_path list.photo.key, height: 300, crop: :fill) : image_path(random_movie.poster_url) %>)">
-        <h2><%= list.name %></h2>
-        <%= link_to "", list_path(list) %>
-        <%= link_to "edit", edit_list_path(list) %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? (cl_image_path list.photo.key, height: 300, crop: :fill) : list.movies.any? ? image_path(list.movies.sample.poster_url) : image_path('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU') %>)">
+          <h2><%= list.name %></h2>
+        <%= link_to "", list_path(list), class: "list" %>
+          <div class="card-buttons">
+            <%= link_to edit_list_path(list) do %>
+              <i class="fa-solid fa-pencil"></i>
+            <% end %>
+            <%= link_to list_path(list), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+              <i class="fa-solid fa-trash"></i>
+            <% end %>
+          </div>
       </div>
     <% end %>
   <% else %>

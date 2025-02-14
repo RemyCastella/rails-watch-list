@@ -18,11 +18,27 @@
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
   }
 
-  a {
+  a.list {
     position: absolute;
     top: 0;
     bottom: 0;
     width: 100%;
+  }
+
+}
+
+.card-buttons {
+  padding: 1rem 2rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5rem;
+
+  a {
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
   }
 
 }
